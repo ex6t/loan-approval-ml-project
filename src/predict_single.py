@@ -17,18 +17,18 @@ def predict_loan_application(applicant_data):
     input_df = pd.DataFrame([applicant_data])
 
     for col, encoder in feature_encoders.items():
-    input_df[col] = input_df[col].str.strip()
+        input_df[col] = input_df[col].str.strip()
 
-    valid_values = set(encoder.classes_)
-    input_value = input_df[col].iloc[0]
+        valid_values = set(encoder.classes_)
+        input_value = input_df[col].iloc[0]
 
-    if input_value not in valid_values:
-        raise ValueError(
-            f"Invalid value '{input_value}' for column '{col}'. "
-            f"Expected one of: {list(valid_values)}"
-        )
+        if input_value not in valid_values:
+            raise ValueError(
+                f"Invalid value '{input_value}' for column '{col}'. "
+                f"Expected one of: {list(valid_values)}"
+            )
 
-    input_df[col] = encoder.transform(input_df[col])
+        input_df[col] = encoder.transform(input_df[col])
 
     prediction_encoded = model.predict(input_df)[0]
     prediction_label = target_encoder.inverse_transform([prediction_encoded])[0]

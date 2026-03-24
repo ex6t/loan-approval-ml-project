@@ -23,3 +23,12 @@ This is a beginner-to-advanced machine learning portfolio project based on a loa
 - Added multiple applicant test cases for stronger demo coverage.
 - Added validation for categorical inputs.
 - This structure is now ready to be reused inside an API endpoint.
+
+## Training the model
+- Run the following command from the project root:
+	python3 src/train_model.py
+
+
+## Running a single prediction
+- After training the model, run:
+	python3 src/predict_single.py
