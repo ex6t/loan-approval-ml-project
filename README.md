@@ -43,3 +43,9 @@ Start the backend server from the project root:
 ## Available endpoints
 - `GET /health` → returns API status
 - `POST /predict` → accepts a loan application and returns prediction probabilities
+
+## Project structure
+- `src/train_model.py` → trains the Random Forest model and saves artifacts
+- `src/model_utils.py` → shared model loading and prediction logic
+- `src/predict_single.py` → tests predictions on sample applicants
+- `src/api.py` → FastAPI backend for live prediction requests
