@@ -49,3 +49,11 @@ Start the backend server from the project root:
 - `src/model_utils.py` → shared model loading and prediction logic
 - `src/predict_single.py` → tests predictions on sample applicants
 - `src/api.py` → FastAPI backend for live prediction requests
+
+## API validation features
+The API includes:
+- numeric range validation using Pydantic
+- categorical value validation using saved encoders
+- model confidence reporting
+- `decision_type` output (`automatic` or `manual_review`)
+- `model_version` field for traceability
