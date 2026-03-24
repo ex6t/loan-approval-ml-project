@@ -32,3 +32,14 @@ This is a beginner-to-advanced machine learning portfolio project based on a loa
 ## Running a single prediction
 - After training the model, run:
 	python3 src/predict_single.py
+
+## Running the API
+
+Start the backend server from the project root:
+- uvicorn src.api:app --reload
+- http://127.0.0.1:8000/docs for interactive API docs
+- http://127.0.0.1:8000/health for a health check
+
+## Available endpoints
+- `GET /health` → returns API status
+- `POST /predict` → accepts a loan application and returns prediction probabilities
