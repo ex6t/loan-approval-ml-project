@@ -57,3 +57,10 @@ The API includes:
 - model confidence reporting
 - `decision_type` output (`automatic` or `manual_review`)
 - `model_version` field for traceability
+
+## Running the frontend
+-Start the FastAPI backend first:
+	uvicorn src.api:app --reload
+-In a second terminal, start the Streamlit frontend:
+	streamlit run streamlit_app.py
+
